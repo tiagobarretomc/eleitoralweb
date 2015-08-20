@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+  <definition name="menu.top" template="/layout/menuTop.jsp">
+    <put-attribute name="title" value="Eleitoral Web" />
+  </definition>
+  <definition name="layout.baseTemplate" template="/layout/baseTemplate.jsp">
+    <put-attribute name="title" value="Eleitoral Web" />
+    <put-attribute name="menu.top" value="menu.top" />
+    <put-attribute name="menu.left" value="/layout/menuLeft.jsp" />
+  </definition>
+  <definition name="layout.baseForm" extends="layout.baseTemplate">
+     <put-attribute name="body" value="/layout/baseForm.jsp" />
+  </definition>
+</tiles-definitions>
