@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 import br.com.eleitoralweb.bean.Combo;
-import br.com.eleitoralweb.dao.commons.DAOException;
+import br.com.eleitoralweb.exceptions.DAOException;
 
 public class EntityUtil {
 	public static <E> Object getId(Class<?> clazz, E bean){

@@ -3,15 +3,16 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-  <definition name="menu.top" template="/layout/menuTop.jsp">
+  <definition name="layout.top" template="/layout/baseTop.jsp">
     <put-attribute name="title" value="Eleitoral Web" />
+  </definition>
+  <definition name="layout.base" template="/layout/base.jsp">
+	    <put-attribute name="title" value="Eleitoral Web" />
+	    <put-attribute name="layout.top" value="layout.top" />
   </definition>
   <definition name="layout.baseTemplate" template="/layout/baseTemplate.jsp">
-    <put-attribute name="title" value="Eleitoral Web" />
-    <put-attribute name="menu.top" value="menu.top" />
-    <put-attribute name="menu.left" value="/layout/menuLeft.jsp" />
+		<put-attribute name="layout.menu" value="/layout/menu.jsp" />
   </definition>
-  <definition name="layout.baseForm" extends="layout.baseTemplate">
-     <put-attribute name="body" value="/layout/baseForm.jsp" />
-  </definition>
+  <definition name="layout.baseForm" template="/layout/baseForm.jsp"/>
+  <definition name="layout.baseSearchForm" template="/layout/baseSearchForm.jsp"/>
 </tiles-definitions>

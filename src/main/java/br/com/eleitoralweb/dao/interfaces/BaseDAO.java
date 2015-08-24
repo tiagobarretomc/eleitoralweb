@@ -1,4 +1,4 @@
-package br.com.eleitoralweb.dao.commons;
+package br.com.eleitoralweb.dao.interfaces;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,8 +8,9 @@ import javax.persistence.EntityManager;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 
-public interface CrudDAO<T> {
+import br.com.eleitoralweb.exceptions.DAOException;
 
+public interface BaseDAO<T> {
 	/**
 	 * Adiciona uma entity na persist?ncia
 	 * @param entity
@@ -61,12 +62,11 @@ public interface CrudDAO<T> {
 	 */
 	public T findById(Serializable id) throws DAOException; 
 	
-	public List<T> findByExample(final T entity, Order... ordenacoes)  throws DAOException;
+	public List<T> findByFilter(final T entity, Order... ordenacoes)  throws DAOException;
 	
 	public List<T> findByCriteria(final int firstResult,	final int maxResults, final Criterion... criterion);
 	
 	public List<T> findByCriteria(final Criterion... criterion);
 	
-	public List<T> findByFilter(T filter);
 }
 

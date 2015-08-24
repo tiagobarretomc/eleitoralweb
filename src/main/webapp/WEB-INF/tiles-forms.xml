@@ -3,7 +3,42 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-  <definition name="index/index" extends="layout.baseTemplate">
-    <put-attribute name="body" value="/WEB-INF/jsp/index/index.jsp" />
-  </definition>
+	<definition name="main/main" extends="layout.base">
+		<put-attribute name="body">
+			<definition extends="layout.baseTemplate">
+				<put-attribute name="content" value="/WEB-INF/jsp/main/main.jsp" />
+			</definition>
+		</put-attribute>
+	</definition>
+	<definition name="login/login" extends="layout.base">
+		<put-attribute name="body" value="/WEB-INF/jsp/login/login.jsp" />
+	</definition>
+	<definition name="usuario/lista" extends="layout.base">
+		<put-attribute name="body">
+			<definition extends="layout.baseTemplate">
+				<put-attribute name="content">
+					<definition extends="layout.baseSearchForm">
+						<put-attribute name="title" value="Usuário" />
+						<put-attribute name="controller" value="usuario" />
+						<put-attribute name="search.form"
+							value="/WEB-INF/jsp/usuario/search.jsp" />
+						<put-attribute name="search.list" value="/WEB-INF/jsp/usuario/list.jsp" />
+					</definition>
+				</put-attribute>
+			</definition>
+		</put-attribute>
+	</definition>
+	<definition name="usuario/form" extends="layout.base">
+		<put-attribute name="body">
+			<definition extends="layout.baseTemplate">
+				<put-attribute name="content">
+					<definition extends="layout.baseForm">
+						<put-attribute name="form.fields" value="/WEB-INF/jsp/usuario/form.jsp" />
+						<put-attribute name="title" value="Usuário" />
+						<put-attribute name="controller" value="usuario" />
+					</definition>
+				</put-attribute>
+			</definition>
+		</put-attribute>
+	</definition>
 </tiles-definitions>

@@ -1,19 +1,19 @@
-package br.com.eleitoralweb.dao.commons;
+package br.com.eleitoralweb.exceptions;
 
 @SuppressWarnings("serial")
-public class DAOException extends Exception {
+public class BusinessException extends RuntimeException {
 
 	/**
 	 * Construtor default
 	 */
-	public DAOException() {
+	public BusinessException() {
 	}
 
 	/**
 	 * Construtor
 	 * @param message
 	 */
-	public DAOException(String message) {
+	public BusinessException(String message) {
 		super(message);
 	}
 
@@ -21,7 +21,7 @@ public class DAOException extends Exception {
 	 * Construtor
 	 * @param cause
 	 */
-	public DAOException(Throwable cause) {
+	public BusinessException(Throwable cause) {
 		super(cause);
 	}
 
@@ -30,7 +30,7 @@ public class DAOException extends Exception {
 	 * @param message
 	 * @param cause
 	 */
-	public DAOException(String message, Throwable cause) {
+	public BusinessException(String message, Throwable cause) {
 		super(message, cause);
 	}
 

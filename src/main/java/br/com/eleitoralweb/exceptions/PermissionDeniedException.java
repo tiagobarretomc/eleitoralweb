@@ -1,4 +1,4 @@
-package br.com.eleitoralweb.dao.commons;
+package br.com.eleitoralweb.exceptions;
 
 public class PermissionDeniedException extends Exception{
 

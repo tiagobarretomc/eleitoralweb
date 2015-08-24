@@ -12,7 +12,11 @@ public class TilesPathResolver extends DefaultPathResolver {
     protected TilesPathResolver(FormatResolver resolver) {
         super(resolver);
     }
-
+	@Override
+	protected String extractControllerFromName(String baseName) {
+		// TODO Auto-generated method stub
+		return super.extractControllerFromName(baseName);
+	}
     @Override
     protected String getPrefix() {
         return "/";
