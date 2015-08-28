@@ -6,7 +6,8 @@
 	<hr />
 
 	<div class="well well-sm">
-		<h2>Seja bem vindo ${userSession.nome}!</h2>
-		<p>Utilize o menu ao lado para acessar as áreas do painel!</p>
+		<h2>Seja bem vindo ${userSession.user.nome}!</h2>
+		<p>Utilize o menu ao lado para acessar as
+			&aacute;reas do painel!</p>
 	</div>
 </body>

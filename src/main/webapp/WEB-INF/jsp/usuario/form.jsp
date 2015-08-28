@@ -26,7 +26,8 @@
 			size="8" maxlength="15" />
 	</div>
 </div>
-</br>
+
+<div style="clear:both"/>
 <div class="row-fluid">
 	<div class="panel panel-default">
 		<!-- Default panel contents -->
@@ -45,7 +46,7 @@
 					<span class="glyphicon glyphicon-floppy-disk"></span> Adicionar
 				</button>
 			<!-- List group -->
-			<div id="grupoList" style="clear: both">
+			<div id="grupoList" style="clear: both;">
 				<ul class="list-group">
 					<c:forEach var="grupoUsuario" items="${gruposDoUsuario}"
 						varStatus="contador">

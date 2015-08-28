@@ -1,9 +1,5 @@
 package br.com.eleitoralweb.controller.commons;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
@@ -12,6 +8,9 @@ import br.com.eleitoralweb.dao.interfaces.BaseDAO;
 import br.com.eleitoralweb.exceptions.BusinessException;
 import br.com.eleitoralweb.manager.commons.BaseManager;
 import br.com.eleitoralweb.util.EntityUtil;
+
+import javax.inject.Inject;
+import java.util.List;
 
 
 public abstract class BaseController<E, D extends BaseDAO<E>, T extends BaseManager<E, D>> {

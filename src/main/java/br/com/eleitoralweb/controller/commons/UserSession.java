@@ -4,9 +4,10 @@ import br.com.eleitoralweb.entity.Usuario;
 import org.springframework.stereotype.Component;
 
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 
-@Component
+@Named
 @SessionScoped
 public class UserSession implements Serializable{
 

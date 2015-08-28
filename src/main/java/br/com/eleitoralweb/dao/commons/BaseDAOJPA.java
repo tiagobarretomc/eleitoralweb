@@ -2,17 +2,23 @@ package br.com.eleitoralweb.dao.commons;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import br.com.eleitoralweb.util.EntityUtil;
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.criterion.CriteriaQuery;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
+import org.hibernate.engine.spi.TypedValue;
 import org.hibernate.exception.ConstraintViolationException;
 import org.jboss.weld.bean.proxy.ProxyObject;
 
@@ -200,8 +206,11 @@ public class BaseDAOJPA<T> implements BaseDAO<T> {
 		try {
 			Session session = (Session) manager.getDelegate();
 			Criteria crit = session.createCriteria(classEntity);
+			Map<String, Object> params = EntityUtil.loadParams(entity);
 			List<T> result = null;
+			for (String param : params.keySet()) {
 
+			}
 			for (int i = 0; i < ordenacoes.length; i++) {
 				crit.addOrder(ordenacoes[i]);
 			}

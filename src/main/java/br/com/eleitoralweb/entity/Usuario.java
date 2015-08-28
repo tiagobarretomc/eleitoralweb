@@ -1,5 +1,6 @@
 package br.com.eleitoralweb.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,12 +12,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlTransient;
 
 
 @Entity
 @Table(name="usuario")
-public class Usuario {
+public class Usuario implements Serializable{
 	@Id
 	@GeneratedValue
 	private Long id;

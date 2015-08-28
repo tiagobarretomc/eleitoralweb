@@ -20,12 +20,21 @@ import br.com.eleitoralweb.manager.commons.UsuarioManager;
 public class LoginController {
 	@Inject
 	private Result result;
-	@Inject
 	private UserSession userSession;
     @Inject
     private UsuarioManager usuarioManager;
     @Inject
     private Validator validator;
+
+    public LoginController(){
+    }
+
+    @Inject
+    public LoginController(UserSession userSession) {
+        this();
+        this.userSession = userSession;
+    }
+
     @Get("/")
     public void login() {
 

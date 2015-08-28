@@ -10,13 +10,32 @@
 	$(document).ready(function() {
 
 		$('.crudaddbtn').click(function() {
+			$(".crudform").attr('action','${pageContext.request.contextPath}/<tiles:getAsString name="controller" />/add');
 			$(".crudform").submit();
+
 		});
 		$('.crudcancelbtn').click(function() {
+			window.location.href = '${pageContext.request.contextPath}/<tiles:getAsString name="controller" />/lista';
 		});
 		$('.crudnewbtn').click(function() {
+			$(".crudform").attr('action','${pageContext.request.contextPath}/<tiles:getAsString name="controller" />/novo');
 			$(".crudform").submit();
 		});
+		$('.crudform').validate({
+
+			ignore: ':not(select:hidden, input:visible, textarea:visible)',
+
+			errorPlacement: function (error, element) {
+				if ($(element).is('select')) {
+					element.next().after(error); // special placement for select elements
+				} else {
+					error.insertAfter(element);  // default placement for everything else
+				}
+			},
+
+
+		});
+
 	});
 </script>
 
@@ -31,7 +50,7 @@
 
 			<div class="conteudo_painel">
 				<div class="conteudo_painel_int">
-					<form id="formCrud" name="formCrud" method="post">
+					<form id="formCrud" class="crudform" name="formCrud" method="post">
 						<tiles:insertAttribute name="form.fields" />
 						<button type="button" id="btncancel"
 							class="btn btn-default btn-md crudnewbtn">
