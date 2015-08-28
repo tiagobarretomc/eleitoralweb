@@ -20,13 +20,13 @@ public class ControleAcessoInterceptor implements Interceptor {
 	@Override
 	public boolean accepts(ControllerMethod arg0) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
-	public void intercept(InterceptorStack arg0, ControllerMethod arg1,
+	public void intercept(InterceptorStack stack, ControllerMethod arg1,
 			Object arg2) throws InterceptionException {
-		// TODO Auto-generated method stub
+		stack.next(arg1, arg2);
 		
 	}
 

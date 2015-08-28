@@ -65,14 +65,9 @@
 			<version>1.7.6</version>
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.6</version>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-extras</artifactId>
-			<version>3.0.3</version> <!-- ou a última versão -->
+			<version>3.0.5</version> <!-- ou a última versão -->
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -106,8 +101,8 @@
 				<configuration>
 					<driver>com.mysql.jdbc.Driver</driver>
 					<url>jdbc:mysql://localhost/eleitoralw</url>
-					<user>transmetais</user>
-					<password>guerra</password>
+					<user>root</user>
+					<password></password>
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -118,37 +113,7 @@
 				</dependencies>
 			</plugin>
 			<!-- To use the plugin goals in your POM or parent POM -->
-			<plugin>
-				<groupId>com.googlecode.mavenfilesync</groupId>
-				<artifactId>maven-filesync-plugin</artifactId>
-				<version>1.0.0</version>
-				<configuration>
-					<defaultDestination>C:\Users\Tiago\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\eleitoralweb</defaultDestination>
-					<mappings>
-						<mapping>
-							<sourceFolder>src/main/resources</sourceFolder>
-						</mapping>
-						<mapping>
-							<sourceFolder>target/classes</sourceFolder>
-							<inclPatternList>
-								<include>**/*.class</include>
-								<include>**/*.jsp</include>
-								<include>**/*.js</include>
-								<include>**/*.css</include>
-							</inclPatternList>
-							<exclPatternList>
-								<exclude>**/*Test*</exclude>
-								<exclude>**/*.html</exclude>
-							</exclPatternList>
-						</mapping>
-					</mappings>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.2</version>
-			</plugin>
+
 		</plugins>
 	</build>
 </project>

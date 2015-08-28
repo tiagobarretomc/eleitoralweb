@@ -1,12 +1,10 @@
 package br.com.eleitoralweb.controller.commons;
 
-import java.io.Serializable;
-
-import javax.enterprise.context.SessionScoped;
-
+import br.com.eleitoralweb.entity.Usuario;
 import org.springframework.stereotype.Component;
 
-import br.com.eleitoralweb.entity.Usuario;
+import javax.enterprise.context.SessionScoped;
+import java.io.Serializable;
 
 @Component
 @SessionScoped
@@ -18,7 +16,10 @@ public class UserSession implements Serializable{
 	private static final long serialVersionUID = -7335609776581390861L;
 	private Usuario user;
 
-    public boolean isLogged() {
+	public UserSession() {
+	}
+
+	public boolean isLogged() {
         return getUser() != null;
     }
 
