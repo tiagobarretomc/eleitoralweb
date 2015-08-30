@@ -1,22 +1,14 @@
 package br.com.eleitoralweb.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import br.com.caelum.vraptor.*;
+import br.com.eleitoralweb.controller.commons.*;
+import br.com.eleitoralweb.dao.interfaces.*;
+import br.com.eleitoralweb.entity.*;
+import br.com.eleitoralweb.manager.commons.*;
+import br.com.eleitoralweb.util.*;
+import com.google.gson.*;
 
-import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Path;
-import br.com.caelum.vraptor.Post;
-import br.com.caelum.vraptor.Result;
-import br.com.eleitoralweb.controller.commons.BaseController;
-import br.com.eleitoralweb.dao.interfaces.UsuarioDAO;
-import br.com.eleitoralweb.entity.GrupoUsuario;
-import br.com.eleitoralweb.entity.Usuario;
-import br.com.eleitoralweb.entity.UsuarioGrupo;
-import br.com.eleitoralweb.exceptions.BusinessException;
-import br.com.eleitoralweb.manager.commons.UsuarioManager;
-import br.com.eleitoralweb.util.SecurityUtil;
-
-import com.google.gson.Gson;
+import java.util.*;
 
 @Controller
 @Path("/usuario")

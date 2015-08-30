@@ -1,18 +1,12 @@
 package br.com.eleitoralweb.controller;
 
-import javax.inject.Inject;
+import br.com.caelum.vraptor.*;
+import br.com.caelum.vraptor.validator.*;
+import br.com.eleitoralweb.controller.commons.*;
+import br.com.eleitoralweb.entity.*;
+import br.com.eleitoralweb.manager.*;
 
-import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Get;
-import br.com.caelum.vraptor.Path;
-import br.com.caelum.vraptor.Post;
-import br.com.caelum.vraptor.Result;
-import br.com.caelum.vraptor.validator.SimpleMessage;
-import br.com.caelum.vraptor.validator.Validator;
-import br.com.eleitoralweb.controller.commons.UserSession;
-import br.com.eleitoralweb.entity.Usuario;
-import br.com.eleitoralweb.exceptions.BusinessException;
-import br.com.eleitoralweb.manager.commons.UsuarioManager;
+import javax.inject.*;
 
 
 @Controller

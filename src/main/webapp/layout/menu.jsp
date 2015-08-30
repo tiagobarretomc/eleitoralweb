@@ -1,62 +1,36 @@
- <!-- menu navegação lateral -->
-                <div class="panel panel-primary">
-                    <div id="colGroup1" role="tab" class="panel-heading">
-                        <h4 class="panel-title">
-                            <a href="#colListGroup1" aria-controls="colListGroup1" aria-expanded="false" data-toggle="collapse">
-                                
-                                <span class="glyphicon glyphicon-file"></span>
-                                
-                                Cadastro básico
-                            </a>
-                        </h4>
-                    </div>
-                    <div role="tabpanel" class="panel-collapse collapse" id="colListGroup1" aria-expanded="false">
-                        <ul class="list-group">
-                            <li class="list-group-item"><a href="${pageContext.request.contextPath}/usuario/lista/">Usuário</a></li>
-                        </ul>
-                        <div class="panel-footer"></div>
-                    </div>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!-- menu navegaï¿½ï¿½o lateral -->
+<c:forEach var="menu" items="${menuList}" varStatus="contador">
+        <div class="panel panel-primary">
+            <div id="colGroup${contador.index}" role="tab" class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#colListGroup${contador.index}" aria-controls="colListGroup${contador.index}" aria-expanded="false" data-toggle="collapse">
+
+                        <span class="glyphicon glyphicon-file"></span>
+                        <c:if test="${not empty menu.url}">
+                            <a href="${pageContext.request.contextPath}${menu.url}">${menu.nome}</a>
+                        </c:if>
+                        <c:if test="${empty menu.url}">
+                            ${menu.nome}
+                        </c:if>
+                    </a>
+                </h4>
+            </div>
+            <c:forEach var="itemMenu" items="${menu.recursosFilhos}" varStatus="contadorItem">
+                <div role="tabpanel" class="panel-collapse collapse" id="colListGroup${contador.index}" aria-expanded="false">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <c:if test="${not empty itemMenu.url}">
+                                <a href="${pageContext.request.contextPath}${itemMenu.url}">${itemMenu.nome}</a>
+                            </c:if>
+                            <c:if test="${empty itemMenu.url}">
+                                ${itemMenu.nome}
+                            </c:if>
+
+                        </li>
+                    </ul>
+                    <div class="panel-footer"></div>
                 </div>
-                <!-- /.menu navegação lateral -->
-                
-                <!-- menu navegação lateral -->
-                <div class="panel panel-primary">
-                    <div id="colGroup1" role="tab" class="panel-heading">
-                        <h4 class="panel-title">
-                            <a href="#colListGroup2" aria-controls="colListGroup2" aria-expanded="false" data-toggle="collapse">
-                                
-                                <span class="glyphicon glyphicon-usd"></span>
-                                
-                                Gerenciar contas
-                            </a>
-                        </h4>
-                    </div>
-                    <div role="tabpanel" class="panel-collapse collapse" id="colListGroup2" aria-expanded="false">
-                        <ul class="list-group">
-                            <li class="list-group-item"><a href="#">Contas em aberto</a></li>
-                        </ul>
-                        <div class="panel-footer"></div>
-                    </div>
-                </div>
-                <!-- /.menu navegação lateral -->
-                  <!-- menu navegação lateral -->
-                <div class="panel panel-primary">
-                    <div id="colGroup1" role="tab" class="panel-heading">
-                        <h4 class="panel-title">
-                            <a href="#colListGroup3" aria-controls="colListGroup3" aria-expanded="false" data-toggle="collapse">
-                                
-                                <span class="glyphicon glyphicon-bullhorn"></span>
-                                
-                                Comunicação
-                            </a>
-                        </h4>
-                    </div>
-                    <div role="tabpanel" class="panel-collapse collapse" id="colListGroup3" aria-expanded="false">
-                        <ul class="list-group">
-                            <li class="list-group-item"><a href="#">Aviso</a></li>
-                        </ul>
-                        <div class="panel-footer"></div>
-                    </div>
-                </div>
-                <!-- /.menu navegação lateral -->
-                
+            </c:forEach>
+        </div>
+ </c:forEach>
