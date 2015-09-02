@@ -52,7 +52,7 @@
 						<li class="list-group-item"><span
 							id="removerGrupo_${contador.index}" title="Excluir"
 				  					class="glyphicon glyphicon-remove">
-								${grupoUsuario} </span><input type="hidden"
+								${grupoUsuario.nome} </span><input type="hidden"
 							id="grupos[${contador.index}]" name="grupos[${contador.index}]"
 							value="${grupoUsuario}" /></li>
 					</c:forEach>

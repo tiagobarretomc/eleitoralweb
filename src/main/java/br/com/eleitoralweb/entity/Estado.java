@@ -1,7 +1,9 @@
 package br.com.eleitoralweb.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,11 +16,18 @@ import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name="estado")
-public class Estado {
+public class Estado implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	private String uf;
+	@Column(name="cod_ibge")
+	private Integer codigoIBGE;
+	@Column(name="sigla")
+	private String codigo;
 	private String nome;
 	@OneToMany(mappedBy="estado")
 	@Fetch(FetchMode.JOIN)
@@ -29,12 +38,7 @@ public class Estado {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getUf() {
-		return uf;
-	}
-	public void setUf(String uf) {
-		this.uf = uf;
-	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -46,6 +50,18 @@ public class Estado {
 	}
 	public void setCidades(List<Cidade> cidades) {
 		this.cidades = cidades;
+	}
+	public String getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+	public Integer getCodigoIBGE() {
+		return codigoIBGE;
+	}
+	public void setCodigoIBGE(Integer codigoIBGE) {
+		this.codigoIBGE = codigoIBGE;
 	}
 	
 	

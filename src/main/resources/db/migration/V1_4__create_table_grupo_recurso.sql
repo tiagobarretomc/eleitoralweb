@@ -7,12 +7,12 @@ CREATE TABLE `recurso_grupo` (
   INDEX `fk_grupo_recurso_recurso_idx` (`id_recurso` ASC),
   CONSTRAINT `fk_grupo_recurso_grupo`
     FOREIGN KEY (`id_grupo`)
-    REFERENCES `eleitoralw`.`grupo_usuario` (`id`)
+    REFERENCES `grupo_usuario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_grupo_recurso_recurso`
     FOREIGN KEY (`id_recurso`)
-    REFERENCES `eleitoralw`.`recurso` (`id`)
+    REFERENCES `recurso` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 

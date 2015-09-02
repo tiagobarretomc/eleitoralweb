@@ -8,10 +8,10 @@ CREATE TABLE `recurso` (
   PRIMARY KEY (`id`));
 ALTER TABLE `recurso`
 ADD INDEX `fk_recurso_pai_idx` (`id_recurso_pai` ASC);
-ALTER TABLE `eleitoralw`.`recurso`
+ALTER TABLE `recurso`
 ADD CONSTRAINT `fk_recurso_pai`
   FOREIGN KEY (`id_recurso_pai`)
-  REFERENCES `eleitoralw`.`recurso` (`id`)
+  REFERENCES `recurso` (`id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
 

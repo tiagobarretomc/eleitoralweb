@@ -11,6 +11,7 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.validator.SimpleMessage;
 import br.com.caelum.vraptor.validator.Validator;
+import br.com.eleitoralweb.annotations.Public;
 import br.com.eleitoralweb.controller.commons.UserSession;
 import br.com.eleitoralweb.entity.Recurso;
 import br.com.eleitoralweb.entity.Usuario;
@@ -41,11 +42,14 @@ public class LoginController {
     }
 
     @Get("/")
+    @Public
     public void login() {
-
+    	userSession.setUser(null);
+    	userSession.setMenuItens(null);
     }
 
     @Post("/autenticar")
+    @Public
     public void autenticar(String login, String senha){
         Usuario user = usuarioManager.obterPorLoginESenha(login, senha);
         if (user != null) {

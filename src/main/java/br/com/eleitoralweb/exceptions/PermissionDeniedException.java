@@ -1,6 +1,7 @@
 package br.com.eleitoralweb.exceptions;
 
-public class PermissionDeniedException extends Exception{
+
+public class PermissionDeniedException extends java.lang.RuntimeException{
 
 	/**
 	 * 

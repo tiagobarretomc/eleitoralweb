@@ -77,4 +77,29 @@
 			</definition>
 		</put-attribute>
 	</definition>
+	<definition name="campanhaEleitoral/form" extends="layout.base">
+		<put-attribute name="body">
+			<definition extends="layout.baseTemplate">
+				<put-attribute name="content">
+					<definition extends="layout.baseForm">
+						<put-attribute name="form.fields" value="/WEB-INF/jsp/campanha/form.jsp" />
+						<put-attribute name="title" value="Cadastro" />
+						<put-attribute name="controller" value="campanha" />
+					</definition>
+				</put-attribute>
+				<put-attribute name="breadcrumb">
+					<definition extends="layout.breadcrumb">
+						<put-list-attribute name="breadcrumbs" cascade="true" inherit="true">
+								<add-attribute value="Home"/>
+								<add-attribute value="Cadastro"/>
+						</put-list-attribute>
+						<put-list-attribute name="breadcrumbslinks" cascade="true" inherit="true">
+								<add-attribute value="/main/main"/>
+								<add-attribute value="#"/>
+						</put-list-attribute>
+					</definition>
+				</put-attribute>
+			</definition>
+		</put-attribute>
+	</definition>
 </tiles-definitions>

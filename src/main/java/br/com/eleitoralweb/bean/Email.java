@@ -1,6 +1,4 @@
-package br.com.eleitoralweb.entity;
-
-import javax.mail.MessagingException;
+package br.com.eleitoralweb.bean;
 
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;

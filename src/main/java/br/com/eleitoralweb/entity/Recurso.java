@@ -1,6 +1,8 @@
 package br.com.eleitoralweb.entity;
 
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.util.*;
 
 
@@ -9,8 +11,12 @@ import java.util.*;
  */
 @Entity
 @Table(name="recurso")
-public class Recurso {
-    @Id
+public class Recurso implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue
     private Long id;
     private String nome;

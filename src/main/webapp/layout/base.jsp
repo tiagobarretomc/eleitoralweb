@@ -23,6 +23,8 @@
 	rel="stylesheet">
 <link href="${pageContext.request.contextPath}/css/estilo.css"
 	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/bootstrap-input-spinner.css"
+	rel="stylesheet">
 
 
 <!--[if lt IE 9]>
@@ -50,7 +52,9 @@
 	<script src="${pageContext.request.contextPath}/js/jquery.maskedinput.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.price_format.2.0.min.js" /></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/date.js" /></script>
-		<script type="text/javascript">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap-input-spinner.js" /></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/util.js" /></script>
+	<script type="text/javascript">
 		
 		$(document).ready(function() {
 			alert($('[form]').length);
@@ -90,5 +94,15 @@
 
 		});
 	</script>
+	<c:if test="${not empty mensagem}">
+		<script>
+			bootbox.alert('${mensagem}');
+		</script>
+	</c:if>
+	<c:if test="${not empty erro}">
+		<script>
+			bootbox.alert('${erro}');
+		</script>
+	</c:if>
 </body>
 </html>
