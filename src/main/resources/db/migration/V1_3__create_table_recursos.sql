@@ -1,6 +1,7 @@
 CREATE TABLE `recurso` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
+  `descricao` VARCHAR(45) NOT NULL,
   `url` VARCHAR(80) NULL,
   `menu` BINARY NOT NULL,
   `id_recurso_pai` INT NULL,
@@ -15,12 +16,16 @@ ADD CONSTRAINT `fk_recurso_pai`
   ON UPDATE NO ACTION;
 
 
-INSERT INTO `recurso`(`id`,`nome`,`url`,`menu`,`id_recurso_pai`)
- VALUES (1, 'Cadastro básico',null,true,null);
-INSERT INTO `recurso`(`id`,`nome`,`url`,`menu`,`id_recurso_pai`)
- VALUES (2, 'Usuário','/usuario/lista/',true,1);
-INSERT INTO `recurso`(`id`,`nome`,`url`,`menu`,`id_recurso_pai`)
- VALUES (3, 'Gerenciar contas',null,true,null);
-INSERT INTO `recurso`(`id`,`nome`,`url`,`menu`,`id_recurso_pai`)
- VALUES (4, 'Comunicação',null,true,null);
+INSERT INTO `recurso`(`id`,`nome`,`descricao`,`url`,`menu`,`id_recurso_pai`)
+ VALUES (1, 'Cadastro básico','Cadastro das tabelas básica', null,true,null);
+ INSERT INTO `recurso`(`id`,`nome`,`descricao`,`url`,`menu`,`id_recurso_pai`)
+ VALUES (6, 'Tipo de contas', 'Cadastro de tipos de contas', null,true,null);
+INSERT INTO `recurso`(`id`,`nome`,`descricao`,`url`,`menu`,`id_recurso_pai`)
+ VALUES (2, 'Gerenciar contas','Módulo de Gerenciamento de contas',null,true,null);
+INSERT INTO `recurso`(`id`,`nome`,`descricao`,`url`,`menu`,`id_recurso_pai`)
+ VALUES (3, 'Gerencial','Módulo Gerencial',null,true,null);
+ INSERT INTO `recurso`(`id`,`nome`,`descricao`,`url`,`menu`,`id_recurso_pai`)
+ VALUES (4, 'Segurança','Módulo de segurança',null,true,null);
+ INSERT INTO `recurso`(`id`,`nome`,`descricao`,`url`,`menu`,`id_recurso_pai`)
+ VALUES (5, 'Usuário','Cadastro de Usuário','/usuario/lista/',true,4);
 

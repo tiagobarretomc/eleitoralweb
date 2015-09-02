@@ -7,6 +7,7 @@
 
 	<div class="conteudo_painel">
 		<div class="conteudo_painel_int">
+			<tiles:insertAttribute name="breadcrumb" />
 			<tiles:insertAttribute name="content" />
 		</div>
 	</div>

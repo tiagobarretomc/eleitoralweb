@@ -1,6 +1,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- menu navega��o lateral -->
-<c:forEach var="menu" items="${menuList}" varStatus="contador">
+<c:forEach var="menu" items="${userSession.menuItens}" varStatus="contador">
         <div class="panel panel-primary">
             <div id="colGroup${contador.index}" role="tab" class="panel-heading">
                 <h4 class="panel-title">

@@ -26,8 +26,7 @@
 			size="8" maxlength="15" />
 	</div>
 </div>
-
-<div style="clear:both"/>
+<br/><br/><br/><br/>
 <div class="row-fluid">
 	<div class="panel panel-default">
 		<!-- Default panel contents -->

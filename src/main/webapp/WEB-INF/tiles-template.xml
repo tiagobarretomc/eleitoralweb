@@ -6,6 +6,7 @@
   <definition name="layout.top" template="/layout/baseTop.jsp">
     <put-attribute name="title" value="Eleitoral Web" />
   </definition>
+  <definition name="layout.breadcrumb" template="/layout/breadCrumb.jsp"/>
   <definition name="layout.base" template="/layout/base.jsp">
 	    <put-attribute name="title" value="Eleitoral Web" />
 	    <put-attribute name="layout.top" value="layout.top" />

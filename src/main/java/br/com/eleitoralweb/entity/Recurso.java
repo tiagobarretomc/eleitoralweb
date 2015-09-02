@@ -14,10 +14,11 @@ public class Recurso {
     @GeneratedValue
     private Long id;
     private String nome;
+    private String descricao;
     private String url;
     private boolean menu;
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="recurso_pai")
+    @JoinColumn(name="id_recurso_pai")
     private Recurso recursoPai;
     @OneToMany(mappedBy = "recursoPai", fetch=FetchType.LAZY)
     private List<Recurso> recursosFilhos;
@@ -70,4 +71,12 @@ public class Recurso {
     public void setRecursosFilhos(List<Recurso> recursosFilhos) {
         this.recursosFilhos = recursosFilhos;
     }
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 }

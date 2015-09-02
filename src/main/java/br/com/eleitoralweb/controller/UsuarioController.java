@@ -1,14 +1,21 @@
 package br.com.eleitoralweb.controller;
 
-import br.com.caelum.vraptor.*;
-import br.com.eleitoralweb.controller.commons.*;
-import br.com.eleitoralweb.dao.interfaces.*;
-import br.com.eleitoralweb.entity.*;
-import br.com.eleitoralweb.manager.commons.*;
-import br.com.eleitoralweb.util.*;
-import com.google.gson.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.*;
+import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Post;
+import br.com.caelum.vraptor.Result;
+import br.com.eleitoralweb.controller.commons.BaseController;
+import br.com.eleitoralweb.dao.interfaces.UsuarioDAO;
+import br.com.eleitoralweb.entity.GrupoUsuario;
+import br.com.eleitoralweb.entity.Usuario;
+import br.com.eleitoralweb.entity.UsuarioGrupo;
+import br.com.eleitoralweb.manager.UsuarioManager;
+import br.com.eleitoralweb.util.SecurityUtil;
+
+import com.google.gson.Gson;
 
 @Controller
 @Path("/usuario")
@@ -27,13 +34,10 @@ public class UsuarioController extends BaseController<Usuario, UsuarioDAO, Usuar
 
 	@Override
 	protected void initForm(Usuario bean) {
-		Gson gson = new Gson();
 		List<GrupoUsuario> gruposDoUsuario = new ArrayList<GrupoUsuario>();
 		for (UsuarioGrupo usuarioGrupo : bean.getGruposUsuario()) {
 			gruposDoUsuario.add(usuarioGrupo.getGrupoUsuario());
 		}
-		String gruposDoUsuarioJson = gson.toJson(gruposDoUsuario);
-		result.include("gruposDoUsuarioJson",gruposDoUsuarioJson);
 		result.include("gruposDoUsuario",gruposDoUsuario);
 		List<GrupoUsuario> gruposUsuarios = new ArrayList<GrupoUsuario>();
 		for (UsuarioGrupo usuarioGrupo : bean.getGruposUsuario()) {

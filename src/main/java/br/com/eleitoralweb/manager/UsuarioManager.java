@@ -1,10 +1,12 @@
 package br.com.eleitoralweb.manager;
 
-import br.com.eleitoralweb.dao.interfaces.*;
-import br.com.eleitoralweb.entity.*;
-import br.com.eleitoralweb.exceptions.*;
-import br.com.eleitoralweb.manager.commons.*;
-import org.springframework.stereotype.*;
+import org.springframework.stereotype.Component;
+
+import br.com.eleitoralweb.dao.interfaces.UsuarioDAO;
+import br.com.eleitoralweb.entity.Usuario;
+import br.com.eleitoralweb.exceptions.BusinessException;
+import br.com.eleitoralweb.exceptions.DAOException;
+import br.com.eleitoralweb.manager.commons.BaseManager;
 
 @Component
 public class UsuarioManager extends BaseManager<Usuario, UsuarioDAO> {

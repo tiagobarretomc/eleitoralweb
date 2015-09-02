@@ -1,11 +1,9 @@
 package br.com.eleitoralweb.controller;
 
-import br.com.caelum.vraptor.*;
+import br.com.caelum.vraptor.Controller;
 
 @Controller
 public class MainController {
-	@Inject
-	private UsuarioManager usuarioManager;
 
 	public void main() {
 	}

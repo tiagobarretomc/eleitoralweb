@@ -7,6 +7,16 @@
 		<put-attribute name="body">
 			<definition extends="layout.baseTemplate">
 				<put-attribute name="content" value="/WEB-INF/jsp/main/main.jsp" />
+				<put-attribute name="breadcrumb">
+					<definition extends="layout.breadcrumb">
+						<put-list-attribute name="breadcrumbs" cascade="true" inherit="true">
+								<add-attribute value="Home"/>
+						</put-list-attribute>
+						<put-list-attribute name="breadcrumbslinks" cascade="true" inherit="true">
+								<add-attribute value="/main/main"/>
+						</put-list-attribute>
+					</definition>
+				</put-attribute>
 			</definition>
 		</put-attribute>
 	</definition>
@@ -25,6 +35,18 @@
 						<put-attribute name="search.list" value="/WEB-INF/jsp/usuario/list.jsp" />
 					</definition>
 				</put-attribute>
+				<put-attribute name="breadcrumb">
+					<definition extends="layout.breadcrumb">
+						<put-list-attribute name="breadcrumbs" cascade="true" inherit="true">
+								<add-attribute value="Home"/>
+								<add-attribute value="Usuário"/>
+						</put-list-attribute>
+						<put-list-attribute name="breadcrumbslinks" cascade="true" inherit="true">
+								<add-attribute value="/main/main"/>
+								<add-attribute value="/usuario/lista"/>
+						</put-list-attribute>
+					</definition>
+				</put-attribute>
 			</definition>
 		</put-attribute>
 	</definition>
@@ -36,6 +58,20 @@
 						<put-attribute name="form.fields" value="/WEB-INF/jsp/usuario/form.jsp" />
 						<put-attribute name="title" value="Usuário" />
 						<put-attribute name="controller" value="usuario" />
+					</definition>
+				</put-attribute>
+				<put-attribute name="breadcrumb">
+					<definition extends="layout.breadcrumb">
+						<put-list-attribute name="breadcrumbs" cascade="true" inherit="true">
+								<add-attribute value="Home"/>
+								<add-attribute value="Usuário"/>
+								<add-attribute value="Cadastro"/>
+						</put-list-attribute>
+						<put-list-attribute name="breadcrumbslinks" cascade="true" inherit="true">
+								<add-attribute value="/main/main"/>
+								<add-attribute value="/usuario/lista"/>
+								<add-attribute value="#"/>
+						</put-list-attribute>
 					</definition>
 				</put-attribute>
 			</definition>

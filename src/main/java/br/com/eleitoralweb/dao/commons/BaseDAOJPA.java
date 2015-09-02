@@ -30,7 +30,6 @@ public class BaseDAOJPA<T> implements BaseDAO<T> {
 	private Class<T> classEntity;
 	protected static final EntityManagerFactory factory = Persistence
 			.createEntityManagerFactory("default");
-
 	/**
 	 * Construtor
 	 * 
